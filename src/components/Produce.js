@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Table from 'react-bootstrap/Table';
 
-
 function ProduceTable(props) {
   return (
     <Table striped bordered hover>
@@ -12,7 +11,7 @@ function ProduceTable(props) {
         </tr>
       </thead>
       <tbody>
-        {props.selection.map((item, index) => (
+        { props.selection.map((item, index) => (
           <tr key={index}>
             <td>{item}</td>
           </tr>
