@@ -15,7 +15,7 @@ function MylistComponents(props) {
   return (
     {items.map((element) => ( 
       <ScheduleList key={element.}/>
-  ))}
+  ))};
 }
 
   render(){
