@@ -6,8 +6,7 @@ class ScheduleControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // formVisibleOnPage: true,
-      selectedDay: null
+    selectedDay: null
     };
     this.handleDaySelection = this.handleDaySelection.bind(this);
   }
