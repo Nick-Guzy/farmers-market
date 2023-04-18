@@ -1,14 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { Form, FormGroup, FormControl } from "react-bootstrap";
 
 function Schedule(props) {
   return (
     <React.Fragment>
-      <h3>{props.day}</h3>
-      <h3>{props.location}</h3>
-      <h3>{props.hours}</h3>
-      <h3>{props.booth}</h3>
+      <Form>
+        <FormGroup>
+          <FormControl type="text" placeholder={props.day} />
+        </FormGroup>
+        <FormGroup>
+          <FormControl type="text" placeholder={props.location} />
+        </FormGroup>
+        <FormGroup>
+          <FormControl type="text" placeholder={props.hours} />
+        </FormGroup>
+        <FormGroup>
+          <FormControl type="text" placeholder={props.booth} />
+        </FormGroup>
+      </Form>
     </React.Fragment>
   );
 }
