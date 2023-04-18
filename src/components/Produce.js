@@ -1,21 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Table from 'react-bootstrap/Table';
 
-function Produce(props) {
+
+function ProduceTable(props) {
   return (
-    <React.Fragment>
-      <h3>{props.month}</h3>
-
-      {props.selection.map((item, index) => (
-        <h3 key={index}> {item} </h3>
-      ))}
-    </React.Fragment>
+    <Table striped bordered hover>
+      <thead>
+        <tr> 
+          <th>Selection</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.selection.map((item, index) => (
+          <tr key={index}>
+            <td>{item}</td>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
   );
 }
 
-Produce.propTypes = {
+ProduceTable.propTypes = {
   month: PropTypes.string.isRequired,
   selection: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default Produce;
+export default ProduceTable;
