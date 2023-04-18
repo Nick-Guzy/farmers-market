@@ -6,31 +6,36 @@ class ScheduleControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: true
+      // formVisibleOnPage: true,
+      selectedDay: null
     };
+    this.handleDaySelection = this.handleDaySelection.bind(this);
   }
-function MylistComponents(props) {
-  const items = props.marketSchedule;
 
+handleDaySelection(day) {
+  this.setState({
+    selectedDay: day
+  });
+};
+
+render() {
   return (
-    {items.map((element) => ( 
-      <ScheduleList key={element.}/>
-  ))}
-}
-
-  render(){
-    let currentlyVisibleState = null;
-    if (this.state.formVisibleOnPage) {
-
-    } else {
-      currentlyVisibleState = <ScheduleList />
-    }
-      return (
-        <React.Fragment>
-          {currentlyVisibleState}
-        </React.Fragment>
-      );
+    <React.Fragment>
+      <div>
+        <h2>Select a day</h2>
+        <button onClick={() => this.handleDaySelection("Sunday")}>Sunday</button>
+        <button onClick={() => this.handleDaySelection("Monday")}>Monday</button>
+        <button onClick={() => this.handleDaySelection("Tuesday")}>Tuesday</button>
+        <button onClick={() => this.handleDaySelection("Wednesday")}>Wednesday</button>
+        <button onClick={() => this.handleDaySelection("Thursday")}>Thursday</button>
+        <button onClick={() => this.handleDaySelection("Friday")}>Friday</button>
+        <button onClick={() => this.handleDaySelection("Saturday")}>Saturday</button>
+      </div>
+      <ScheduleList selectedDay={this.state.selectedDay}/>
+    </React.Fragment>
+    );
   }
 }
 
 export default ScheduleControl;
+

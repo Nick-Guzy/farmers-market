@@ -40,11 +40,12 @@ const marketSchedule = [
   }
  ];
 
- function ScheduleList(){
+ function ScheduleList(props){
+   const filteredArray = marketSchedule.filter(day => day.day === props.selectedDay)
   return (
     <React.Fragment>
       <hr/>
-      {marketSchedule.map((element, index) =>
+      {filteredArray.map((element, index) =>
       <Schedule day={element.day}
       location={element.location}
       hours={element.hours}
